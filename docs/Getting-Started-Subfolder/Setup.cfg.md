@@ -1,10 +1,10 @@
 # Setup.cfg
 
-**In this file, you can find extend documentation on every option in the setup.cfg file.**
+**In this file, you can find extended documentation on every option in the setup.cfg file.**
 
 
 The setup.cfg is the first file that gets loaded on start of the P4wnP1 service.  
-The Payload gets loaded directly afterwards and **has the ability to override variables defined setup.cfg** (so if some features don't behave like they should, their settings are probably getting overridden by the payload)
+The Payload gets loaded directly afterwards and **has the ability to override variables defined in setup.cfg** (so if some features don't behave like they should, their settings are probably getting overridden by the payload)
 
 ***
 
@@ -15,7 +15,7 @@ The Payload gets loaded directly afterwards and **has the ability to override va
 Can be any 4-digit hexadecimal number, but if you want the Pi to like a certain device, you can look up VIDs by name at [the-sz.com](http://www.the-sz.com/products/usbid/).  
 
 !!! info
-    Mac OS only plug'n'plays Apple accessories. So you should change the VID to `0x05ac` if you plan on using the P4wnP1 only Apple devices.
+    Mac OS only plug'n'plays Apple accessories. So you should change the VID to `0x05ac` if you plan on using the P4wnP1 with only Apple devices.
 
 ### USB_PID
 **defines the USB-ProductID**  
@@ -26,7 +26,7 @@ Can be any 4-digit hexadecimal number.
 **defines if the Pi should act as ethernet adapter on Mac OS / Linux machines**  
 can be either true or false
 ### USE_RNDIS
-**defines if the Pi should act as ethernet adapter on Windows machines**  
+**defines if the Pi should act as an ethernet adapter on Windows machines**  
 can be either true or false  
 !!! info
     Since P4wnP1 is limited to USB 2.0 speeds, the reported internet speed is only 450 Mbit/s max.
@@ -56,7 +56,7 @@ can be either true or false
 **defines the range of possible IPs assignable to the target**
 
 ### ROUTE_SPOOF
-**defines the traffic from the target should be routed through P4wnP1**  
+**defines the traffic from the target that should be routed through P4wnP1**  
 !!! info
     P4wnP1 needs internet connectivity and ipv4-forwarding enabled so requests go through.
 
@@ -92,8 +92,8 @@ can be a normal IP-address
 can be a regular netmask
 
 ### WIFI_ACCESSPOINT_DHCP_RANGE
-**defines a the range of possible IP addresses assigned via DHCP**
-can be a two IP-addresses seperated by a comma.
+**defines the range of possible IP addresses assigned via DHCP**
+can be two IP-addresses seperated by a comma.
 
 ### WIFI_ACCESSPOINT_HIDE_SSID
 **defines if the WIFI_ACCESSPOINT_NAME is hidden**
@@ -125,19 +125,19 @@ calls callback 'onKeyboardUp' afterwards; mostly there to provide a default if n
 
 ???+ warning
       Connecting Bluetooth Network Access Point (NAP) with a mobile device requires to disable other networks with internet access on this device in most cases (like WiFi).
-      NAP provided by P4wnP1 doesn't necessarily provide Internet access, but is used to grant network access on P4wnP1 via bluetooth. The alternative would be to establish a "Group Network (GN)" instead of NAP, which unfortunately didn't work in most test cases, when it cames to connection of a mobile device.
+      NAP provided by P4wnP1 doesn't necessarily provide Internet access, but is used to grant network access on P4wnP1 via bluetooth. The alternative would be to establish a "Group Network (GN)" instead of NAP, which unfortunately didn't work in most test cases, when it comes to connection of a mobile device.
       So if Internet should be provided from P4wnP1 via NAP (which isn't the purpose of P4wnP1), P4wnP1 itself has to be connected to Internet (for example using RNDIS + ICS on windows or using the WiFi client mode). Additionally iptables rules have to be deployed to enable MASQUERADING on the respective outbound interface.
 
-To summerize: P4wnP1 provides NAP as access option to SSH via bluetooth, not to serve Internet, although this could be achieved.
+To summerize: P4wnP1 provides NAP as an access option to SSH via bluetooth, not to serve Internet, although this could be achieved.
 
 ### BLUETOOTH_NAP
-Enable Bluetooth NAP to SSH in via Bluetooth
+Enable Bluetooth NAP to SSH via Bluetooth
 ### BLUETOOTH_NAP_PIN
 unused, PIN authentication currently not working (custom agent for bluez 5 needed)
 ### BLUETOOTH_NAP_IP
 IP used by P4wnP1
 ### BLUETOOTH_NAP_NETMASK
-Mandantory Netmask
+Mandatory Netmask
 ### BLUETOOTH_NAP_DHCP_RANGE
 DHCP Server IP Range
 
@@ -146,7 +146,7 @@ DHCP Server IP Range
 
 ### AUTOSSH_ENABLED
 **defines if AUTOSSH reachback is enabled**
-if enabled P4wnP1 will continuously try to bring up a SSH connection tunneling out its internal SSH server to a remote SSH Server
+if enabled P4wnP1 will continuously try to bring up an SSH connection tunneling out its internal SSH server to a remote SSH Server
 ### AUTOSSH_REMOTE_HOST
 host address of the remote SSH server
 Should be a hostname like "_YourSSH-server.com_"
