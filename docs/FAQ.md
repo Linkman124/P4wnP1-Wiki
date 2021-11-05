@@ -35,11 +35,11 @@ Sure... and don't forget the WiFi password ;-)
 `INSTALL.md` will be reworked to give more guidance on how to get the Pi Zero ready.
 
 ### What's the purpose of "John the Ripper (JtR)" and "Responder.py"
-The package came from an idea in early development stage. There's an attack mentioned in the README, which allows you to steal NetNTLMv2 hashes from locked Windows boxes (Rob ‘MUBIX’ Fuller: “Snagging creds from locked machines”). This was in fact the first payload that was implemented on P4wnP1 (Rsponder.py is there for the same reason, as it is needed to carry out the attack). The plan was to develop a "LOCKPICKER" for Windows hosts with weak credentials, which would do the following:
+The package came from an idea in early development stage. There's an attack mentioned in the README, which allows you to steal NetNTLMv2 hashes from locked Windows boxes (Rob ‘MUBIX’ Fuller: “Snagging creds from locked machines”). This was in fact the first payload that was implemented on P4wnP1 (Responder.py is there for the same reason, as it is needed to carry out the attack). The plan was to develop a "LOCKPICKER" for Windows hosts with weak credentials, which would do the following:
 1. Steal the NetNTLMv2 hash with the 'Mubix' approach
 2. Fetch the hash from Responder.db and hand it over to John the Ripper
 3. Try to crack the hash until either P4wnP1 is shutdown or the John the Ripper reports a SUCCESS.
-4. On SUCESS, use the HID keyboard to type out the plaintext password and unlock the machine.
+4. On SUCCESS, use the HID keyboard to type out the plaintext password and unlock the machine.
 
 So if you ask, "Where is the lock picker?" ... It has never been finished, for multiple reasons.
 - The chance for the "Snagging creds attack" to succeed is very low, since Microsoft patched the issue.
@@ -51,12 +51,12 @@ The Responder.py version is a slightly modified one, allowing it to respond to p
 
 # Backdoor
 ***
-### I am getting the "No screen to be attatched" error on the backdoor payload, what can I do?
+### I am getting the "No screen to be attached" error on the backdoor payload, what can I do?
 
 Many people seem to have this problem, try:
 
-* Check to make sure you are using a cable that has data lines. If you just use a charging cable it wont work.
-* Try waiting longer before you SSH to allow the pi to start up all the required proccesses. For most, it seems to work after a couple of minutes from when the pi is plugged into target. And don't SSH as soon as you connect to the wifi, give it some time.
+* Check to make sure you are using a cable that has data lines. If you just use a charging cable it won't work.
+* Try waiting longer before you SSH, to allow the pi to start up all the required processes. For most, it seems to work after a couple of minutes from when the pi is plugged into the target. And don't SSH as soon as you connect to the wifi, give it some time.
 * Make sure you are running the latest supported and tested version of raspbian by running `uname -a`
 
 If these things still bring no result, you can try:
@@ -67,7 +67,7 @@ If these things still bring no result, you can try:
 
 ### Is it possible to change the network settings?
 #### Yes
-In setup.cfg, you will find a header called Wifi options, all of the wireless settings can be modified here
+In setup.cfg, you will find a header called "Wifi options", all of the wireless settings can be modified here
 
 ### If I close the server is there a way to reopen it?
 #### Yes
